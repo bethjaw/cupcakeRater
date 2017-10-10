@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/main.css'>
+  </head>
+  <body>
+    <div class='cupcakeDiv'>
+    <div class='cupcake'>
+      <h3>{{oneCupcake.flavor}}</h3>
+      <p>{{oneCupcake.description}}</p>
+      <p>Baker: {{oneCupcake.baker}}</p>
+      <div class='allRatings'>
+        <h5>Votes</h5>
+          {{#each oneCupcake.ratings}}
+          <span class='vote'>{{this}}</span>
+          {{/each}}
+
+      </div>
+      <p>Rating: {{oneCupcake.averageRating}}</p>
+    </div>
+  </div>
+  </body>
+</html>
