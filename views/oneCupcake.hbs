@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>{{title}}</title>
     <link rel='stylesheet' href='/main.css'>
+  <link href="https://fonts.googleapis.com/css?family=Bowlby+One|Open+Sans" rel="stylesheet">
   </head>
   <body>
     <div class='cupcakeDiv'>
@@ -12,13 +13,18 @@
       <p>{{oneCupcake.description}}</p>
       <p>Baker: {{oneCupcake.baker}}</p>
       <div class='allRatings'>
-        <h5>Votes</h5>
+        <p>Votes:</p>
           {{#each oneCupcake.ratings}}
           <span class='vote'>{{this}}</span>
           {{/each}}
-
       </div>
       <p>Rating: {{oneCupcake.averageRating}}</p>
+      <div class='addRating'>
+        <form action='cupcakes/rating/{{oneCupcake.id}}' method='post'>
+          <input type='number' name='vote' value='3' min='0' max='5'>
+          <button>Vote!</button>
+        </form>
+      </div>
     </div>
   </div>
   </body>
